@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <div class="wrapper grid">
+      <!-- Header / Navigation -->
+      <header class="header">
+        <nav class="header__nav hidden" aria-label="Main navigation">
+          <!-- see if possible to add container class on header__menu? -->
+          <!-- <div class="header__menu-logo flex"> -->
+
+          <!-- </div> -->
+          <ul
+            class="header__menu container flex"
+            role="menubar"
+            id="primary-navigation"
+          >
+            <li class="header__menu-item" role="none">
+              <a href="#" role="menuitem">Collections</a>
+            </li>
+            <li class="header__menu-item" role="none">
+              <a href="#" role="menuitem">Men</a>
+            </li>
+            <li class="header__menu-item" role="none">
+              <a href="#" role="menuitem">Women</a>
+            </li>
+            <li class="header__menu-item" role="none">
+              <a href="#" role="menuitem">About</a>
+            </li>
+            <li class="header__menu-item" role="none">
+              <a href="#" role="menuitem">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__menu-actions flex container">
+          <div class="header__menu-logo flex">
+            <button
+              class="header__menu-btn btn-reset"
+              type="button"
+              aria-label="Open navigation menu"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+            >
+              <img src="images/icon-menu.svg" alt="" />
+            </button>
+            <img
+              src="images/logo.svg"
+              alt="website logo"
+              class="header__logo"
+            />
+          </div>
+
+          <div class="header__actions flex">
+            <button
+              class="header__cart-btn btn-reset"
+              type="button"
+              aria-label="View cart"
+              aria-controls="cart-panel"
+              aria-expanded="false"
+            >
+              <img src="images/icon-cart.svg" alt="" />
+              <span class="cart__item-count hidden"></span>
+            </button>
+            <button
+              class="header__avatar-btn btn-reset"
+              type="button"
+              aria-label="User profile"
+            >
+              <img
+                src="images/image-avatar.png"
+                alt="Profile picture"
+                class="header__avatar-img"
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="product container grid">
+        <!-- Product Gallery -->
+        <section
+          id="cart-panel"
+          class="cart container hidden"
+          role="region"
+          aria-labelledby="cart-title"
+        >
+          <h2 class="cart__title" id="cart-title">
+            <span class="visually-hidden">Your</span> Cart
+          </h2>
+          <div class="cart__content grid container">
+            <p class="cart__empty">Your cart is empty</p>
+            <!-- cart content here -->
+            <ul class="cart__list grid">
+              <!-- visual guide for dynamic item adding-->
+              <!-- <li class="cart__item flex">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="thumbnail of chosen product"
+                class="cart__item-thumbnail"
+              />
+              <div class="cart__details flex">
+                <p class="cart__item-name">Fall Limited Edition Sneakers</p>
+                <p class="cart__amount">
+                  <span class="item__price"> $125</span>
+                  x
+                  <span class="item__qty">3</span
+                  ><span class="cart__total"> $375.00</span>
+                </p>
+              </div>
+              <button class="cart__delete-item btn-reset" type="button">
+                <img src="images/icon-delete.svg" alt="delete cart item" />
+              </button>
+            </li> -->
+            </ul>
+            <button class="cart__checkout-btn" type="button">Checkout</button>
+          </div>
+        </section>
+
+        <section
+          class="product__gallery grid container"
+          aria-label="Product images"
+        >
+          <!-- <div class="product__carousel"> -->
+          <button
+            class="product__carousel-btn product__carousel-btn--prev btn-reset grid"
+            type="button"
+            aria-label="Previous image"
+          >
+            <!-- <img src="images/icon-previous.svg" alt="" class="carousel__icon" /> -->
+            <svg
+              class="carousel__icon"
+              width="13"
+              height="18"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <img
+            src="images/image-product-1.jpg"
+            alt="Fall Limited Edition Sneakers"
+            class="product__image"
+          />
+
+          <div
+            class="product__carousel hidden"
+            role="tablist"
+            aria-roledescription="carousel"
+            aria-label="Product image gallery"
+          >
+            <button
+              class="product__thumbnail-btn btn-reset"
+              type="button"
+              role="tab"
+              aria-controls="product-main-image"
+              aria-selected="true"
+              aria-label="View sole and side of the sneakers"
+            >
+              <div class="thumbnail__container active-border">
+                <img
+                  src="images/image-product-1-thumbnail.jpg"
+                  alt="Sole and side view of Fall Limited Edition Sneakers"
+                  class="product__thumbnail active"
+                />
+              </div>
+            </button>
+
+            <button
+              class="product__thumbnail-btn btn-reset"
+              type="button"
+              role="tab"
+              aria-controls="product-main-image"
+              aria-selected="true"
+              aria-label="View sole and side of the sneakers"
+            >
+              <div class="thumbnail__container">
+                <img
+                  src="images/image-product-2-thumbnail.jpg"
+                  alt="Front and back view of Fall Limited Edition Sneakers"
+                  class="product__thumbnail"
+                />
+              </div>
+            </button>
+
+            <button
+              class="product__thumbnail-btn btn-reset"
+              type="button"
+              role="tab"
+              aria-controls="product-main-image"
+              aria-selected="true"
+              aria-label="View sole and side of the sneakers"
+            >
+              <div class="thumbnail__container">
+                <img
+                  src="images/image-product-3-thumbnail.jpg"
+                  alt="Front view of Fall Limited Edition Sneakers"
+                  class="product__thumbnail"
+                />
+              </div>
+            </button>
+
+            <button
+              class="product__thumbnail-btn btn-reset"
+              type="button"
+              role="tab"
+              aria-controls="product-main-image"
+              aria-selected="true"
+              aria-label="View sole and side of the sneakers"
+            >
+              <div class="thumbnail__container">
+                <img
+                  src="images/image-product-4-thumbnail.jpg"
+                  alt="side view of Fall Limited Edition Sneakers"
+                  class="product__thumbnail"
+                />
+              </div>
+            </button>
+          </div>
+          <!-- </div> -->
+          <button
+            class="product__carousel-btn product__carousel-btn--next btn-reset grid"
+            type="button"
+            aria-label="Next image"
+          >
+            <!-- <img src="images/icon-next.svg" alt="" class="carousel__icon" /> -->
+            <svg
+              class="carousel__icon"
+              width="13"
+              height="18"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <!-- </div> -->
+        </section>
+
+        <!-- Product Info -->
+        <section
+          class="product__info container"
+          aria-labelledby="product-info-heading"
+        >
+          <h1 class="visually-hidden" id="product-info-heading">
+            Product Informations
+          </h1>
+          <span class="product__company"><small>Sneaker Company</small></span>
+          <h2 class="product__title">
+            Fall Limited Edition <br />
+            Sneakers
+          </h2>
+          <p class="product__description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <!-- Pricing -->
+          <div class="product__pricing flex">
+            <div class="product__price-wrapper flex">
+              <span class="product__price">$125.00</span>
+              <span class="product__discount" aria-label="50 percent off"
+                >50%</span
+              >
+            </div>
+            <del class="product__original-price" aria-hidden="true"
+              >$250.00</del
+            >
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="product__quantity-addtocart">
+            <div
+              class="product__quantity flex"
+              role="group"
+              aria-label="Select product quantity"
+            >
+              <button
+                class="product__quantity-btn product__quantity-btn--decrease btn-reset"
+                type="button"
+                aria-label="Decrease quantity"
+              >
+                <img src="images/icon-minus.svg" alt="" />
+              </button>
+              <output
+                class="product__quantity-value"
+                aria-live="polite"
+                aria-atomic="true"
+                ><span class="visually-hidden">Quantity:</span>
+                <span class="product__quantity-number">0</span></output
+              >
+              <button
+                class="product__quantity-btn product__quantity-btn--increase btn-reset"
+                type="button"
+                aria-label="Increase quantity"
+              >
+                <img src="images/icon-plus.svg" alt="" />
+              </button>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button class="product__add-to-cart btn-reset" type="button">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="var(--Black)"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <div
+        id="lightbox-carousel"
+        class="lightbox hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lightbox-title"
+      >
+        <h2 id="lightbox-title" class="visually-hidden">
+          Product Image Gallery View
+        </h2>
+        <button
+          class="lightbox__close-btn btn-reset"
+          aria-label="Close image gallery"
+        >
+          <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+              fill="white"
+              fill-rule="evenodd"
+              aria-hidden="true"
+              focusable="false"
+            />
+          </svg>
+        </button>
+
+        <div class="lightbox__main-carousel-wrapper grid">
+          <button
+            class="lightbox__btn lightbox__btn--prev btn-reset"
+            aria-label="Previous image"
+          >
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+                aria-hidden="true"
+                focusable="false"
+              />
+            </svg>
+          </button>
+          <img
+            src="images/image-product-1.jpg"
+            alt="Fall Limited Edition Sneakers"
+            class="lightbox__main-image"
+          />
+          <button
+            class="lightbox__btn lightbox__btn--next btn-reset"
+            aria-label="Next image"
+          >
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+                aria-hidden="true"
+                focusable="false"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="lightbox__thumbnails flex"
+          role="tablist"
+          aria-label="Carousel image selection"
+        >
+          <button
+            class="lightbox__thumbnail-btn btn-reset"
+            role="tab"
+            aria-selected="true"
+            aria-controls="lightbox-main-image"
+            aria-label="View sole and side of the sneakers"
+          >
+            <div class="lightbox__thumbnail-container active-border">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="Sole and side view"
+                class="active lightbox__thumbnail"
+              />
+            </div>
+          </button>
+
+          <button
+            class="lightbox__thumbnail-btn btn-reset"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lightbox-main-image"
+            aria-label="View back and front of the sneakers"
+          >
+            <div class="lightbox__thumbnail-container">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                alt="Front and back view"
+                class="lightbox__thumbnail"
+              />
+            </div>
+          </button>
+          <button
+            class="lightbox__thumbnail-btn btn-reset"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lightbox-main-image"
+            aria-label="View front of the sneakers"
+          >
+            <div class="lightbox__thumbnail-container">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                alt="Front view"
+                class="lightbox__thumbnail"
+              />
+            </div>
+          </button>
+          <button
+            class="lightbox__thumbnail-btn btn-reset"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lightbox-main-image"
+            aria-label="View side of the sneakers"
+          >
+            <div class="lightbox__thumbnail-container">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                alt="Side view"
+                class="lightbox__thumbnail"
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
