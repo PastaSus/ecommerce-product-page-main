@@ -258,7 +258,7 @@ textarea:not([rows]) {
 .header__menu-btn {
   position: absolute;
 
-  z-index: 4;
+  z-index: 6;
 }
 .header__logo {
   margin-inline-start: var(--spacing-32);
@@ -268,7 +268,7 @@ textarea:not([rows]) {
   /* max-width: 330px; */
   /* position: relative; */
   position: fixed;
-  z-index: 3;
+  z-index: 5;
   width: 69vw;
   height: 100vh;
   left: 0;
@@ -668,6 +668,10 @@ textarea:not([rows]) {
     height: 100vh; */
   }
 
+  .overlay {
+    z-index: 6;
+  }
+
   .active-border {
     background-color: var(--White);
   }
@@ -757,7 +761,7 @@ textarea:not([rows]) {
 
     gap: var(--spacing-36);
 
-    z-index: 4;
+    z-index: 5;
   }
 
   .header__menu-actions {
@@ -904,7 +908,7 @@ textarea:not([rows]) {
   }
 
   .lightbox {
-    z-index: 5;
+    z-index: 7;
     position: absolute;
 
     max-width: 600px;
