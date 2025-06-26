@@ -32,7 +32,8 @@ Users should be able to:
 
 ### Screenshot
 
-![E-commerce product page screenshot](./screenshot.jpg)
+![E-commerce product page mobile screenshot](./images/Mobiless.png)
+![E-commerce product page desktop screenshot](./images/Desktopss.png)
 
 ### Links
 

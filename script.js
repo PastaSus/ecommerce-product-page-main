@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   thumbnailBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
+      // First update ARIA attributes
+      thumbnailBtns.forEach((b) => b.setAttribute("aria-selected", "false"));
+      btn.setAttribute("aria-selected", "true");
+
       openLightBox(index); // Pass the clicked index
     });
   });
