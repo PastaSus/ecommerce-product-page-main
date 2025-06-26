@@ -12,7 +12,6 @@ This is my solution to the [E-commerce product page challenge on Frontend Mentor
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -163,12 +162,7 @@ function renderCartItem(product) {
 
 ### Continued development
 
-I want to use frameworks and be more efficient when coding in the future
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+I want to use frameworks and be more efficient when coding in the future. And also make the profile btn work and checkout to the overall components of the site.
 
 ## Author
 
