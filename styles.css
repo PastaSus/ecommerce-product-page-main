@@ -794,6 +794,7 @@ textarea:not([rows]) {
   }
 
   .thumbnail__container {
+    display: inherit;
     border-radius: 9px;
   }
 
@@ -887,6 +888,7 @@ textarea:not([rows]) {
   }
 
   .lightbox__thumbnail-container {
+    display: inherit;
     border-radius: 11px;
   }
 
