@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".overlay");
 
   const currImg = document.querySelector(".product__image");
+  currImg.addEventListener("click", () => {
+    if (window.innerWidth >= 1080) {
+      openLightBox(currentIndex); // ✅ Open lightbox when large image is clicked
+    }
+  });
+
   const prevImg = document.querySelector(".product__carousel-btn--prev");
   const nextImg = document.querySelector(".product__carousel-btn--next");
   const thumbnails = document.querySelectorAll(".product__thumbnail");
@@ -35,16 +41,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const emptyMsg = document.querySelector(".cart__empty");
   const checkoutBtn = document.querySelector(".cart__checkout-btn");
 
-  const carousel = document.querySelector(".product__gallery");
   const thumbnailBtns = document.querySelectorAll(".product__thumbnail-btn");
 
   thumbnailBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      // First update ARIA attributes
+      // 1. Update the main image (desktop + mobile)
+      updateImage(index);
+
+      // 2. Update ARIA states
       thumbnailBtns.forEach((b) => b.setAttribute("aria-selected", "false"));
       btn.setAttribute("aria-selected", "true");
 
-      openLightBox(index); // Pass the clicked index
+      // 3. Apply active styles
+      thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+
+      thumbnailBtns.forEach((b) => {
+        const container = b.querySelector(".thumbnail__container");
+        if (container) container.classList.remove("active-border");
+      });
+
+      thumbnails[index].classList.add("active");
+      const activeContainer = btn.querySelector(".thumbnail__container");
+
+      if (activeContainer) activeContainer.classList.add("active-border");
     });
   });
 
