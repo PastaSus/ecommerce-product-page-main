@@ -103,7 +103,6 @@
         <section
           id="cart-panel"
           class="cart container hidden"
-          role="region"
           aria-labelledby="cart-title"
         >
           <h2 class="cart__title" id="cart-title">
@@ -298,9 +297,7 @@
           <div class="product__pricing flex">
             <div class="product__price-wrapper flex">
               <span class="product__price">$125.00</span>
-              <span class="product__discount" aria-label="50 percent off"
-                >50%</span
-              >
+              <span class="product__discount">50%</span>
             </div>
             <del class="product__original-price" aria-hidden="true"
               >$250.00</del
@@ -363,6 +360,7 @@
           Product Image Gallery View
         </h2>
         <button
+          type="button"
           class="lightbox__close-btn btn-reset"
           aria-label="Close image gallery"
         >
@@ -379,6 +377,7 @@
 
         <div class="lightbox__main-carousel-wrapper grid">
           <button
+            type="button"
             class="lightbox__btn lightbox__btn--prev btn-reset"
             aria-label="Previous image"
           >
@@ -400,6 +399,7 @@
             class="lightbox__main-image"
           />
           <button
+            type="button"
             class="lightbox__btn lightbox__btn--next btn-reset"
             aria-label="Next image"
           >
@@ -423,6 +423,7 @@
           aria-label="Carousel image selection"
         >
           <button
+            type="button"
             class="lightbox__thumbnail-btn btn-reset"
             role="tab"
             aria-selected="true"
@@ -439,6 +440,7 @@
           </button>
 
           <button
+            type="button"
             class="lightbox__thumbnail-btn btn-reset"
             role="tab"
             aria-selected="false"
@@ -454,6 +456,7 @@
             </div>
           </button>
           <button
+            type="button"
             class="lightbox__thumbnail-btn btn-reset"
             role="tab"
             aria-selected="false"
@@ -469,6 +472,7 @@
             </div>
           </button>
           <button
+            type="button"
             class="lightbox__thumbnail-btn btn-reset"
             role="tab"
             aria-selected="false"
